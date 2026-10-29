@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mauro Saez — Asistente Virtual & Gestión de Operaciones</title>
+<style>
+  :root{--ink:#0c1e33;--ink2:#16385e;--gold:#e8be6e;--soft:#d6e2ee;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--ink);color:#eaf1f8;
+       line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 20px}
+  .card{max-width:860px;width:100%;background:linear-gradient(160deg,var(--ink2),var(--ink));
+        border:1px solid rgba(232,190,110,.25);border-radius:18px;padding:44px 40px;
+        box-shadow:0 24px 70px rgba(0,0,0,.45)}
+  .bar{width:64px;height:4px;background:var(--gold);border-radius:2px;margin-bottom:22px}
+  h1{font-size:clamp(28px,5vw,44px);letter-spacing:.5px;text-transform:uppercase}
+  .role{color:var(--gold);font-weight:600;margin-top:8px;font-size:clamp(15px,2.4vw,19px)}
+  .tag{margin-top:18px;font-style:italic;color:var(--soft);font-size:17px}
+  ul{margin:26px 0 0 0;list-style:none;display:grid;gap:10px}
+  li{padding-left:26px;position:relative;color:#dce8f3}
+  li::before{content:"▸";position:absolute;left:0;color:var(--gold)}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+  a.btn{background:var(--gold);color:#14100a;text-decoration:none;font-weight:700;padding:14px 26px;
+        border-radius:30px;transition:transform .15s ease}
+  a.btn:hover{transform:translateY(-2px)}
+  a.ghost{background:transparent;color:var(--soft);border:1px solid rgba(214,226,238,.35)}
+  footer{margin-top:30px;font-size:13px;color:#8fa4b8}
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="bar"></div>
+    <h1>Mauro Saez</h1>
+    <p class="role">Asistente Virtual · Gestión de Operaciones y Administración</p>
+    <p class="tag">Ordeno procesos, datos y agendas para que tu operación no falle.</p>
+    <ul>
+      <li>+20 años de experiencia en logística, producción y control de inventarios.</li>
+      <li>Gestión de agendas, seguimiento de tareas y flujos de trabajo.</li>
+      <li>Administración de bases de datos, CRM e informes ejecutivos.</li>
+      <li>Trazabilidad y control de procesos bajo ISO 9001 y 5S.</li>
+      <li>Automatización con Inteligencia Artificial para ganar productividad.</li>
+    </ul>
+    <div class="cta">
+      <a class="btn" href="CV_MauroSaez_AsistenteVirtual.pdf" download>Descargar CV (PDF)</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/mauro-saez-932643173/">Ver perfil de LinkedIn</a>
+    </div>
+    <footer>Contacto: mauroalbertosaez@hotmail.com · 100% remoto · Buenos Aires, Argentina</footer>
+  </main>
+</body>
+</html>
