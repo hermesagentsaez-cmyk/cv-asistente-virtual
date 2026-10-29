@@ -9,15 +9,13 @@
   :root{
     --ink:#081524; --ink2:#0f2438; --card:rgba(255,255,255,.055);
     --line:rgba(232,190,110,.22); --gold:#e8be6e; --gold2:#f3d69b;
-    --text:#e9f1f8; --muted:#a9bccd;
-    --max:1120px;
+    --text:#e9f1f8; --muted:#a9bccd; --max:1120px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,sans-serif;
        background:var(--ink);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
 
-  /* ---------- HERO ---------- */
   header.hero{position:relative;min-height:92vh;display:flex;align-items:center;
        background:url("oficina.jpg") center/cover no-repeat fixed;overflow:hidden}
   header.hero::after{content:"";position:absolute;inset:0;
@@ -38,46 +36,48 @@
   .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.35)}
   .btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#14100a}
   .btn-line{border:1px solid rgba(233,241,248,.34);color:var(--text);background:rgba(255,255,255,.04)}
+  .btn svg{width:18px;height:18px}
 
-  /* ---------- SECCIONES ---------- */
   section{padding:88px 24px}
   .wrap{max-width:var(--max);margin:0 auto}
   .kicker{color:var(--gold);font-size:12.5px;letter-spacing:2.4px;text-transform:uppercase;font-weight:700}
   h2{font-size:clamp(24px,3.4vw,36px);margin:10px 0 12px;letter-spacing:-.3px}
-  .section-lead{color:var(--muted);max-width:640px;margin-bottom:44px}
+  .section-lead{color:var(--muted);max-width:660px;margin-bottom:44px}
 
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
   .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;
-        padding:26px 24px;transition:border-color .18s ease,transform .18s ease,background .18s ease}
+        padding:28px 26px;transition:border-color .18s ease,transform .18s ease,background .18s ease}
   .card:hover{border-color:var(--line);transform:translateY(-4px);background:rgba(255,255,255,.08)}
-  .card .ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
-        background:rgba(232,190,110,.14);color:var(--gold);font-size:20px;margin-bottom:16px}
+  .card .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+        background:linear-gradient(150deg,rgba(232,190,110,.18),rgba(232,190,110,.06));
+        border:1px solid rgba(232,190,110,.28);margin-bottom:18px}
+  .card .ico svg{width:23px;height:23px;stroke:var(--gold);fill:none;stroke-width:1.6;
+        stroke-linecap:round;stroke-linejoin:round}
   .card h3{font-size:18px;margin-bottom:8px}
   .card p{color:var(--muted);font-size:15px}
-  .card .val{display:block;margin-top:12px;font-size:14px;color:var(--gold2);font-style:italic}
+  .card .val{display:block;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.07);
+        font-size:14px;color:var(--gold2)}
 
-  /* ---------- VALOR ---------- */
-  .valor{background:linear-gradient(180deg,var(--ink),var(--ink2));border-top:1px solid rgba(255,255,255,.05);
-         border-bottom:1px solid rgba(255,255,255,.05)}
-  .valor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+  .valor{background:linear-gradient(180deg,var(--ink),var(--ink2));
+         border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+  .valor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
   .vitem h3{color:var(--gold2);font-size:17px;margin-bottom:6px}
   .vitem p{color:var(--muted);font-size:15px}
 
-  /* ---------- STACK ---------- */
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
   .chip{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);
         padding:9px 16px;border-radius:999px;font-size:14px;color:#dbe7f2}
   .chip strong{color:var(--gold2);font-weight:600}
 
-  /* ---------- CONTACTO ---------- */
   .contacto{text-align:center}
-  .contacto .box{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);
-        border-radius:20px;padding:52px 28px}
-  .contacto p{color:var(--muted);margin:12px auto 26px;max-width:520px}
-  .contacto .mail{color:var(--gold2);font-weight:700;text-decoration:none}
+  .contacto .box{max-width:780px;margin:0 auto;background:var(--card);border:1px solid var(--line);
+        border-radius:20px;padding:54px 30px}
+  .contacto p{color:var(--muted);margin:12px auto 28px;max-width:560px}
+  .contacto .btn{justify-content:center}
 
   footer{padding:34px 24px;text-align:center;color:#7f95a8;font-size:13px;
          border-top:1px solid rgba(255,255,255,.06)}
+  footer a{color:var(--gold);text-decoration:none}
 
   @media (max-width:680px){
     .hero-grid{grid-template-columns:1fr;text-align:center;gap:20px}
@@ -98,13 +98,22 @@
         <span class="eyebrow">Disponible · 100% remoto</span>
         <h1>Mauro Saez<br><span>Asistente Virtual</span></h1>
         <p class="sub">Gestión de Operaciones y Administración</p>
-        <p class="lead">Ordeno procesos, datos y agendas para que tu operación no falle.
+        <p class="lead">Ordeno procesos, datos y agendas para que tu operación funcione sin fallas.
            +20 años coordinando operaciones y equipos, hoy aplicados al trabajo remoto:
            criterio operativo real, no solo herramientas.</p>
         <div class="cta">
-          <a class="btn btn-gold" href="CV_MauroSaez_AsistenteVirtual.pdf" download>Descargar CV (PDF)</a>
-          <a class="btn btn-line" href="https://www.linkedin.com/in/mauro-saez-932643173/" target="_blank" rel="noopener">Ver LinkedIn</a>
-          <a class="btn btn-line" href="mailto:mauroalbertosaez@hotmail.com">Escribime</a>
+          <a class="btn btn-gold" href="CV_MauroSaez_AsistenteVirtual.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 12 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Descargar CV
+          </a>
+          <a class="btn btn-line" href="https://www.linkedin.com/in/mauro-saez-932643173/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21H9z"/></svg>
+            Ver LinkedIn
+          </a>
+          <a class="btn btn-line" href="mailto:mauroalbertosaez@hotmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Escribime
+          </a>
         </div>
       </div>
     </div>
@@ -115,57 +124,57 @@
   <div class="wrap">
     <p class="kicker">Servicios</p>
     <h2>Qué puedo resolver por vos</h2>
-    <p class="section-lead">Cada servicio está pensado desde la operación real: no se trata de "cargar datos",
-       se trata de que la información sirva, llegue a tiempo y no se pierda.</p>
+    <p class="section-lead">Cada servicio parte de la operación real: no se trata de cargar datos,
+       sino de que la información sea confiable, llegue a tiempo y sostenga las decisiones del negocio.</p>
 
     <div class="cards">
       <div class="card">
-        <div class="ico">🗓️</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/><path d="M8 15h3M8 18h6"/></svg></div>
         <h3>Gestión de agendas y reuniones</h3>
-        <p>Coordinación de calendarios, confirmaciones, recordatorios y seguimiento de compromisos en Google Calendar.</p>
-        <span class="val">Tu semana ordenada, sin superposiciones ni reuniones olvidadas.</span>
+        <p>Coordinación de calendarios compartidos, confirmaciones, recordatorios y seguimiento de compromisos y plazos.</p>
+        <span class="val">Agenda organizada, sin superposiciones ni reuniones olvidadas.</span>
       </div>
       <div class="card">
-        <div class="ico">📥</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="m8 12 2.5 2.5L16 9"/><path d="M4 9h16"/></svg></div>
         <h3>Administración de correo y bandeja de entrada</h3>
-        <p>Clasificación, respuestas, etiquetas y prioridades para que lo importante no se entierre.</p>
-        <span class="val">Bandeja bajo control y nada urgente queda sin responder.</span>
+        <p>Clasificación, respuestas, etiquetas y prioridades para que los temas relevantes queden atendidos en tiempo.</p>
+        <span class="val">Bandeja bajo control y mensajes críticos sin demoras.</span>
       </div>
       <div class="card">
-        <div class="ico">🗂️</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M8 13h8"/></svg></div>
         <h3>Organización documental y archivos</h3>
-        <p>Estructura de carpetas y permisos en Google Drive, documentación de procesos y bases de información en Notion.</p>
-        <span class="val">Todo encontrable en dos clics, incluso si no estás vos.</span>
+        <p>Estructura de carpetas y permisos, documentación de procesos y bases de información en plataformas de organización y notas.</p>
+        <span class="val">Información localizable de inmediato, incluso en ausencia del responsable.</span>
       </div>
       <div class="card">
-        <div class="ico">📦</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12v9M4 7.5 12 12l8-4.5"/></svg></div>
         <h3>Control de inventarios y trazabilidad</h3>
-        <p>Conteos, conciliación sistema vs. realidad física, control de no conformidades y registro en ERP.</p>
-        <span class="val">Datos que coinciden con lo que hay: se termina el "figura en sistema".</span>
+        <p>Conteos, conciliación entre sistema y existencia física, control de no conformidades y registro en sistemas de gestión.</p>
+        <span class="val">Información confiable: el sistema refleja la realidad operativa.</span>
       </div>
       <div class="card">
-        <div class="ico">📊</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
         <h3>Informes y reportería</h3>
-        <p>Planillas en Google Sheets y Excel, tablas dinámicas y tableros en Power BI para gerencia.</p>
-        <span class="val">Decisiones con números claros, no con intuición.</span>
+        <p>Planillas de cálculo, tablas dinámicas y tableros de control para reportes de gestión y seguimiento de indicadores.</p>
+        <span class="val">Decisiones respaldadas por datos, con criterio y trazabilidad.</span>
       </div>
       <div class="card">
-        <div class="ico">🔁</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/><path d="M9 12h6"/></svg></div>
         <h3>Seguimiento de pedidos y proveedores</h3>
         <p>Estado de compras, entregas y reclamos, con trazabilidad de cada etapa, control de plazos y registro de incidencias.</p>
-        <span class="val">Cada pedido con su estado, su responsable y su fecha.</span>
+        <span class="val">Cada operación con estado, responsable y fecha de compromiso documentados.</span>
       </div>
       <div class="card">
-        <div class="ico">⚙️</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
         <h3>Automatización con IA</h3>
-        <p>Asistentes de IA para redactar, resumir, investigar y automatizar tareas repetitivas del día a día.</p>
-        <span class="val">Menos horas en lo mecánico, más tiempo en lo que genera valor.</span>
+        <p>Asistentes de inteligencia artificial aplicados a redacción, resumen, investigación y automatización de tareas repetitivas.</p>
+        <span class="val">Menos tiempo en lo mecánico, más foco en lo que genera valor.</span>
       </div>
       <div class="card">
-        <div class="ico">🛠️</div>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-2.87 1.2V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 6.6 19.7l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 3 15H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.3 8.6l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6V4a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 2.87 1.2l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 21 11h.09a2 2 0 1 1 0 4z"/></svg></div>
         <h3>Soporte administrativo general</h3>
-        <p>Facturación simple, documentación, altas de proveedores y tareas operativas del día.</p>
-        <span class="val">Te saco de encima lo administrativo para que te enfoques en tu negocio.</span>
+        <p>Facturación simple, documentación, altas de proveedores y tareas operativas del día a día.</p>
+        <span class="val">La carga administrativa resuelta para que la gestión se concentre en el negocio.</span>
       </div>
     </div>
   </div>
@@ -175,24 +184,24 @@
   <div class="wrap">
     <p class="kicker">Valor diferencial</p>
     <h2>Por qué yo y no un asistente más</h2>
-    <p class="section-lead">Veinte años en planta enseñan algo que ningún curso enseña: dónde se rompe un proceso
-       antes de que explote.</p>
+    <p class="section-lead">Veinte años en operaciones enseñan algo que ningún curso enseña:
+       dónde se rompe un proceso antes de que impacte en el resultado.</p>
     <div class="valor-grid">
       <div class="vitem">
         <h3>Resolutivo</h3>
-        <p>Dos décadas resolviendo problemas con turnos, urgencias y fechas que no se mueven. Si algo se traba, lo destrabo.</p>
+        <p>Dos décadas resolviendo problemas con turnos, urgencias y fechas que no se mueven. Cuando un proceso se traba, lo destrabo.</p>
       </div>
       <div class="vitem">
         <h3>Ordenado por oficio</h3>
-        <p>Mi trabajo siempre fue que el sistema y la realidad coincidan. Eso es exactamente lo que necesita tu operación digital.</p>
+        <p>Mi trabajo siempre consistió en que el sistema y la realidad coincidan. Es exactamente la disciplina que exige una operación digital.</p>
       </div>
       <div class="vitem">
         <h3>Criterio operativo</h3>
-        <p>No espero instrucciones para cada paso: entiendo el proceso, detecto el cuello de botella y propongo la mejora.</p>
+        <p>No espero instrucciones para cada paso: entiendo el proceso, identifico el cuello de botella y propongo la mejora.</p>
       </div>
       <div class="vitem">
         <h3>Digital + operativo</h3>
-        <p>Combino Drive, Sheets, Notion e IA con experiencia real en procesos, calidad (ISO 9001) y trazabilidad.</p>
+        <p>Combino herramientas de productividad e inteligencia artificial con experiencia real en procesos, calidad (ISO 9001) y trazabilidad.</p>
       </div>
     </div>
   </div>
@@ -202,14 +211,14 @@
   <div class="wrap">
     <p class="kicker">Herramientas</p>
     <h2>Con qué trabajo</h2>
-    <p class="section-lead">Stack digital orientado a productividad y orden, no a la herramienta de moda.</p>
+    <p class="section-lead">Stack digital orientado a productividad, orden y trazabilidad.</p>
     <div class="chips">
       <span class="chip"><strong>Google Workspace</strong> · Drive, Docs, Sheets, Calendar</span>
       <span class="chip"><strong>Notion</strong> · bases de datos y procesos</span>
       <span class="chip"><strong>Excel</strong> avanzado · tablas dinámicas</span>
-      <span class="chip"><strong>Power BI</strong> · tableros</span>
+      <span class="chip"><strong>Power BI</strong> · tableros de control</span>
       <span class="chip"><strong>ERP</strong> · Adonix y GestPlan</span>
-      <span class="chip"><strong>Google Meet / Zoom</strong> · reuniones</span>
+      <span class="chip"><strong>Reuniones remotas</strong> · Meet y Zoom</span>
       <span class="chip"><strong>IA aplicada</strong> · redacción, resumen, automatización</span>
       <span class="chip"><strong>ISO 9001 / 5S / BPM</strong> · calidad y procesos</span>
     </div>
@@ -220,19 +229,26 @@
   <div class="wrap">
     <div class="box">
       <p class="kicker">Hablemos</p>
-      <h2>¿Necesitás que alguien ordene tu operación?</h2>
-      <p>Contame qué tenés pendiente y te digo, sin vueltas, si puedo resolverlo y cómo lo encararía.</p>
+      <h2>¿Necesitás ordenar la operación de tu negocio?</h2>
+      <p>Contame qué necesitás resolver y te propongo cómo encararlo, con alcance y tiempos definidos.</p>
       <div class="cta" style="justify-content:center">
-        <a class="btn btn-gold" href="mailto:mauroalbertosaez@hotmail.com">mauroalbertosaez@hotmail.com</a>
-        <a class="btn btn-line" href="CV_MauroSaez_AsistenteVirtual.pdf" download>Descargar CV</a>
+        <a class="btn btn-gold" href="https://wa.me/5491132423226" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-1-.3-2.4-1-3.6-2.3-1.1-1.2-1.8-2.5-2-3.3-.2-.8 0-1.3.2-1.7.2-.3.5-.5.7-.6h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.2.3.6.9 1.1 1.4.6.6 1.1.9 1.4 1 .2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.5.8c.3.1.3.2.3.4 0 .1 0 .4-.2.6z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn btn-line" href="mailto:mauroalbertosaez@hotmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          mauroalbertosaez@hotmail.com
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  Mauro Saez · Asistente Virtual · Buenos Aires, Argentina · 100% remoto<br>
-  <a href="https://www.linkedin.com/in/mauro-saez-932643173/" style="color:var(--gold);text-decoration:none">linkedin.com/in/mauro-saez-932643173</a>
+  Mauro Saez · Asistente Virtual · Buenos Aires, Argentina · 100% remoto ·
+  +54 11 3242-3226<br>
+  <a href="https://www.linkedin.com/in/mauro-saez-932643173/">linkedin.com/in/mauro-saez-932643173</a>
 </footer>
 
 </body>
